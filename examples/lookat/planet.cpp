@@ -87,6 +87,8 @@ void Planet::paint() {
 }
 
 void Planet::destroy() {
+  abcg::glDeleteProgram(m_program);
+  abcg::glDeleteBuffers(1, &m_EBO);
   abcg::glDeleteBuffers(1, &m_VBO);
   abcg::glDeleteVertexArrays(1, &m_VAO);
 }
